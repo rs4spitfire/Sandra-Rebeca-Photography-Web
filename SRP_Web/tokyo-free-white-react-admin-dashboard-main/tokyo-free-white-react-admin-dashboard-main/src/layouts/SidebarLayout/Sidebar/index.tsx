@@ -22,7 +22,7 @@ const SidebarWrapper = styled(Box)(
   ({ theme }) => `
         width: ${theme.sidebar.width};
         min-width: ${theme.sidebar.width};
-        color: ${theme.colors.alpha.trueWhite[70]};
+        color: ${theme.colors.secondary};
         position: relative;
         z-index: 7;
         height: 100%;
@@ -47,11 +47,11 @@ function Sidebar() {
           left: 0,
           top: 0,
           background:
-            theme.palette.mode === 'dark'
+            theme.palette.mode === 'light'
               ? alpha(lighten(theme.header.background, 0.1), 0.5)
               : darken(theme.colors.alpha.black[100], 0.5),
           boxShadow:
-            theme.palette.mode === 'dark' ? theme.sidebar.boxShadow : 'none'
+            theme.palette.mode === 'light' ? theme.sidebar.boxShadow : 'none'
         }}
       >
         <Scrollbar>
@@ -69,14 +69,14 @@ function Sidebar() {
             sx={{
               mt: theme.spacing(3),
               mx: theme.spacing(2),
-              background: theme.colors.alpha.trueWhite[10]
+              background: theme.colors.secondary
             }}
           />
           <SidebarMenu />
         </Scrollbar>
         <Divider
           sx={{
-            background: theme.colors.alpha.trueWhite[10]
+            background: theme.colors.secondary
           }}
         />
         <Box p={2}>
@@ -106,8 +106,8 @@ function Sidebar() {
         <SidebarWrapper
           sx={{
             background:
-              theme.palette.mode === 'dark'
-                ? theme.colors.alpha.white[100]
+              theme.palette.mode === 'light'
+                ? theme.colors.secondary
                 : darken(theme.colors.alpha.black[100], 0.5)
           }}
         >

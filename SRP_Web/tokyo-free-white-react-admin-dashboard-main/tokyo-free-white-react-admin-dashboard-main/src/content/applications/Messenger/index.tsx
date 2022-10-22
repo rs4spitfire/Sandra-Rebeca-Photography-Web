@@ -1,6 +1,4 @@
-import { useState } from 'react';
-
-import { Helmet } from 'react-helmet-async';
+import { useState } from 'react';import { Helmet } from 'react-helmet-async';
 
 import TopBarContent from './TopBarContent';
 import BottomBarContent from './BottomBarContent';

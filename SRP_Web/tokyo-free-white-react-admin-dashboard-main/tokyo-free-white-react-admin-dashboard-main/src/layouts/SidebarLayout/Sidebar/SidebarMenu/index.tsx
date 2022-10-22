@@ -46,7 +46,7 @@ const MenuWrapper = styled(Box)(
       text-transform: uppercase;
       font-weight: bold;
       font-size: ${theme.typography.pxToRem(12)};
-      color: "${theme.colors.alpha.trueWhite[50]}";
+      color: "${theme.sidebar.textColor}";
       padding: ${theme.spacing(0, 0.5)};
       line-height: 0.5;
     }
@@ -75,7 +75,7 @@ const SubMenuWrapper = styled(Box)(
     
         .MuiButton-root {
           display: flex;
-          color: ${theme.colors.alpha.trueWhite[70]};
+          color: ${theme.sidebar.textColor};
           background-color: transparent;
           width: 100%;
           justify-content: flex-start;
@@ -92,13 +92,13 @@ const SubMenuWrapper = styled(Box)(
           }
 
           .MuiButton-startIcon {
-            color: ${theme.colors.alpha.trueWhite[30]};
+            color: ${theme.sidebar.textColor};
             font-size: ${theme.typography.pxToRem(20)};
             margin-right: ${theme.spacing(1)};
           }
           
           .MuiButton-endIcon {
-            color: ${theme.colors.alpha.trueWhite[50]};
+            color: ${theme.sidebar.textColor};
             margin-left: auto;
             opacity: .8;
             font-size: ${theme.typography.pxToRem(20)};
@@ -106,12 +106,12 @@ const SubMenuWrapper = styled(Box)(
 
           &.active,
           &:hover {
-            background-color: ${alpha(theme.colors.alpha.trueWhite[100], 0.06)};
-            color: ${theme.colors.alpha.trueWhite[100]};
+            background-color: ${alpha(theme.colors.alpha.black[100], 0.06)};
+            color: ${theme.colors.alpha.black};
 
             .MuiButton-startIcon,
             .MuiButton-endIcon {
-              color: ${theme.colors.alpha.trueWhite[100]};
+              color: ${theme.colors.alpha.black};
             }
           }
         }
@@ -144,7 +144,7 @@ const SubMenuWrapper = styled(Box)(
 
               &:before {
                 content: ' ';
-                background: ${theme.colors.alpha.trueWhite[100]};
+                background: ${theme.colors.alpha.black};
                 opacity: 0;
                 transition: ${theme.transitions.create([
                   'transform',
@@ -179,32 +179,7 @@ function SidebarMenu() {
 
   return (
     <>
-      <MenuWrapper>
-        <List component="div">
-          <SubMenuWrapper>
-            <List component="div">
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/overview"
-                  startIcon={<DesignServicesTwoToneIcon />}
-                >
-                  Overview
-                </Button>
-              </ListItem>
-            </List>
-          </SubMenuWrapper>
-        </List>
-        <List
-          component="div"
-          subheader={
-            <ListSubheader component="div" disableSticky>
-              Dashboards
-            </ListSubheader>
-          }
-        >
+      <MenuWrapper>        
           <SubMenuWrapper>
             <List component="div">
               <ListItem component="div">
@@ -229,19 +204,6 @@ function SidebarMenu() {
                   Messenger
                 </Button>
               </ListItem>
-            </List>
-          </SubMenuWrapper>
-        </List>
-        <List
-          component="div"
-          subheader={
-            <ListSubheader component="div" disableSticky>
-              Management
-            </ListSubheader>
-          }
-        >
-          <SubMenuWrapper>
-            <List component="div">
               <ListItem component="div">
                 <Button
                   disableRipple
@@ -255,7 +217,13 @@ function SidebarMenu() {
               </ListItem>
             </List>
           </SubMenuWrapper>
-        </List>
+        
+          <SubMenuWrapper>
+            <List component="div">
+              
+            </List>
+          </SubMenuWrapper>
+        
         <List
           component="div"
           subheader={

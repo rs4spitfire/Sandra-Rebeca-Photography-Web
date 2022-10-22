@@ -2,8 +2,8 @@ import { alpha, createTheme, lighten, darken } from '@mui/material';
 import '@mui/lab/themeAugmentation';
 
 const themeColors = {
-  primary: '#5569ff',
-  secondary: '#6E759F',
+  primary: '#A3D1D9',
+  secondary: '#D9ABA3',
   success: '#57CA22',
   warning: '#FFA319',
   error: '#FF1943',
@@ -53,16 +53,16 @@ const colors = {
       bodyBg: '#f2f5f9'
     },
     sidebar: {
-      background: themeColors.white,
-      textColor: themeColors.secondary,
+      background: themeColors.primary,
+      textColor: themeColors.black,
       dividerBg: '#f2f5f9',
-      menuItemColor: '#242E6F',
-      menuItemColorActive: themeColors.primary,
-      menuItemBg: themeColors.white,
+      menuItemColor: themeColors.black,
+      menuItemColorActive: themeColors.black,
+      menuItemBg: themeColors.black,
       menuItemBgActive: '#f2f5f9',
-      menuItemIconColor: lighten(themeColors.secondary, 0.3),
-      menuItemIconColorActive: themeColors.primary,
-      menuItemHeadingColor: darken(themeColors.secondary, 0.3)
+      menuItemIconColor: lighten(themeColors.black, 0.3),
+      menuItemIconColorActive: themeColors.black,
+      menuItemHeadingColor: darken(themeColors.black, 0.3)
     }
   },
   alpha: {
@@ -244,7 +244,7 @@ export const PureLightTheme = createTheme({
   },
   header: {
     height: '80px',
-    background: colors.alpha.white[100],
+    background: colors.primary.dark,
     boxShadow: colors.shadows.cardSm,
     textColor: colors.secondary.main
   },
@@ -1146,7 +1146,7 @@ export const PureLightTheme = createTheme({
   },
   typography: {
     fontFamily:
-      '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+      'Marcellus',
     h1: {
       fontWeight: 700,
       fontSize: 35
