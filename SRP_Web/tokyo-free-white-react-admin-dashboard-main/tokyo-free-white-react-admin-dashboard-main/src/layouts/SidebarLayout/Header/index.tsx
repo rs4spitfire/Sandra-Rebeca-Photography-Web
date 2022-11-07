@@ -17,7 +17,7 @@ import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 
 import HeaderButtons from './Buttons';
 import HeaderUserbox from './Userbox';
-import HeaderMenu from './Menu';
+import HeaderTitle from './Menu';
 
 const HeaderWrapper = styled(Box)(
   ({ theme }) => `
@@ -26,10 +26,10 @@ const HeaderWrapper = styled(Box)(
         padding: ${theme.spacing(0, 2)};
         right: 0;
         z-index: 6;
-        background-color: "${alpha(theme.header.background, 0.95)}";
+        background: ${theme.palette.primary.light};
         backdrop-filter: blur(3px);
         position: fixed;
-        justify-content: space-between;
+        justify-content: center;
         width: 100%;
         @media (min-width: ${theme.breakpoints.values.lg}px) {
             left: ${theme.sidebar.width};
@@ -48,7 +48,7 @@ function Header() {
       alignItems="center"
       sx={{
         boxShadow:
-          theme.palette.mode === 'dark'
+          theme.palette.mode === 'light'
             ? `0 1px 0 ${alpha(
                 lighten(theme.colors.primary.main, 0.7),
                 0.15
@@ -68,11 +68,11 @@ function Header() {
         alignItems="center"
         spacing={2}
       >
-        <HeaderMenu />
+        <HeaderTitle />
       </Stack>
       <Box display="flex" alignItems="center">
-        <HeaderButtons />
-        <HeaderUserbox />
+        
+        
         <Box
           component="span"
           sx={{
@@ -80,15 +80,7 @@ function Header() {
             display: { lg: 'none', xs: 'inline-block' }
           }}
         >
-          <Tooltip arrow title="Toggle Menu">
-            <IconButton color="primary" onClick={toggleSidebar}>
-              {!sidebarToggle ? (
-                <MenuTwoToneIcon fontSize="small" />
-              ) : (
-                <CloseTwoToneIcon fontSize="small" />
-              )}
-            </IconButton>
-          </Tooltip>
+          
         </Box>
       </Box>
     </HeaderWrapper>

@@ -46,6 +46,7 @@ function Sidebar() {
           position: 'fixed',
           left: 0,
           top: 0,
+          
           background:
             theme.palette.mode === 'light'
               ? alpha(lighten(theme.header.background, 0.1), 0.5)
@@ -55,12 +56,14 @@ function Sidebar() {
         }}
       >
         <Scrollbar>
-          <Box mt={3}>
+          <Box sx={{backgroundColor: theme.colors.alpha.trueWhite[100]}}mt={3}>
             <Box
               mx={2}
               sx={{
-                width: 52
+                width: 52,
+                
               }}
+              
             >
               <Logo />
             </Box>
@@ -129,6 +132,7 @@ function Sidebar() {
                 background: theme.colors.alpha.trueWhite[10]
               }}
             />
+            
             <SidebarMenu />
           </Scrollbar>
         </SidebarWrapper>

@@ -1,3 +1,88 @@
+import { Typography, Badge, useTheme } from '@mui/material';
+import { useRef, useState } from 'react';
+
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Box from '@mui/material/Box';
+import {Button} from '@mui/material'
+import { NavLink as RouterLink } from 'react-router-dom';
+
+
+function HeaderTitle() {
+  const theme = useTheme();
+
+  return (
+    <>    
+    <Box sx={{ width: '100%' }}>
+    <Tabs
+      
+     
+      TabIndicatorProps={{
+        style: {transition: 'none'}
+      }}      
+      aria-label="secondary tabs example"
+    >
+    <Button
+      disableRipple
+      component={RouterLink}
+                  
+      to="/dashboards/messenger"                  
+      >Introduction</Button>
+      <Button
+      disableRipple
+      component={RouterLink}
+                  
+      to="/dashboards/messenger"                  
+      >Newborn</Button>
+      <Button
+      disableRipple
+      component={RouterLink}
+                  
+      to="/dashboards/messenger"                  
+      >Family</Button>
+    </Tabs>
+    
+    </Box>
+      <img
+          src="/static/images/logo/SRP_Logo_Cropped.png"
+          alt="SRP Logo"
+          width={221}
+          height={143}
+          />
+          <Box sx={{ width: '100%' }}>
+    <Tabs
+      
+      TabIndicatorProps={{
+        style: {transition: 'none'}
+      }}        
+      aria-label="secondary tabs example"
+    >
+    <Button
+      disableRipple
+      component={RouterLink}
+                  
+      to="/dashboards/messenger"                  
+      >Portrait</Button>
+      <Button
+      disableRipple
+      component={RouterLink}
+                  
+      to="/dashboards/messenger"                  
+      >Nature</Button>
+      <Button
+      disableRipple
+      component={RouterLink}
+                  
+      to="/dashboards/messenger"                  
+      >Contact</Button>
+    </Tabs>
+  </Box>
+    </>
+  );
+}
+
+export default HeaderTitle;
+/*
 import {
   Box,
   List,
@@ -10,9 +95,12 @@ import { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar';
 
 const ListWrapper = styled(Box)(
   ({ theme }) => `
+        
         .MuiTouchRipple-root {
             display: none;
         }
@@ -22,7 +110,7 @@ const ListWrapper = styled(Box)(
             
             &.MuiListItem-indicators {
                 padding: ${theme.spacing(1, 2)};
-            
+                
                 .MuiListItemText-root {
                     .MuiTypography-root {
                         &:before {
@@ -37,6 +125,7 @@ const ListWrapper = styled(Box)(
                             border-radius: ${theme.general.borderRadiusLg};
                             content: "";
                             background: ${theme.colors.primary.main};
+                            
                         }
                     }
                 }
@@ -77,16 +166,20 @@ function HeaderMenu() {
   return (
     <>
       <ListWrapper
+      
         sx={{
           display: {
             xs: 'none',
-            md: 'block'
+            md: 'block',
+            lg: 'flex'
+            
           }
         }}
       >
-        <List disablePadding component={Box} display="flex">
+        <List disablePadding component={Box} display="flex" justifyContent="center" alignItems="center"  >
           <ListItem
             classes={{ root: 'MuiListItem-indicators' }}
+            
             button
             component={NavLink}
             to="/components/buttons"
@@ -94,10 +187,16 @@ function HeaderMenu() {
             <ListItemText
               primaryTypographyProps={{ noWrap: true }}
               primary="Buttons"
-            />
+            /><img
+          src="/static/images/logo/SRP_Logo_Cropped.png"
+          alt="SRP Logo"
+          width={221}
+          height={143}
+          />
           </ListItem>
           <ListItem
             classes={{ root: 'MuiListItem-indicators' }}
+            
             button
             component={NavLink}
             to="/components/forms"
@@ -145,4 +244,4 @@ function HeaderMenu() {
   );
 }
 
-export default HeaderMenu;
+export default HeaderMenu;*/

@@ -21,12 +21,12 @@ const SidebarLayout: FC<SidebarLayoutProps> = () => {
 
           '.MuiPageTitle-wrapper': {
             background:
-              theme.palette.mode === 'dark'
+              theme.palette.mode === 'light'
                 ? theme.colors.alpha.trueWhite[5]
                 : theme.colors.alpha.white[50],
             marginBottom: `${theme.spacing(4)}`,
             boxShadow:
-              theme.palette.mode === 'dark'
+              theme.palette.mode === 'light'
                 ? `0 1px 0 ${alpha(
                     lighten(theme.colors.primary.main, 0.7),
                     0.15
@@ -42,7 +42,7 @@ const SidebarLayout: FC<SidebarLayoutProps> = () => {
         }}
       >
         <Header />
-        <Sidebar />
+        
         <Box
           sx={{
             position: 'relative',
