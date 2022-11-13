@@ -87,14 +87,7 @@ function Logo() {
   const theme = useTheme();
 
   return (
-      <LogoWrapper to="/overview">
-        <img
-          src="/static/images/avatars/SRP_Logo_Cropped.jpg"
-          alt="SRP Logo"
-          width={221}
-          height={143}
-          />
-      </LogoWrapper>
+      <></>
   );
 }
 

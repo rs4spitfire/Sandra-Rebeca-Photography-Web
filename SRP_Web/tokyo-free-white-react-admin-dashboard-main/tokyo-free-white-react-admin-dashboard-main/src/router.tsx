@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react';
 import { Navigate } from 'react-router-dom';
 import { RouteObject } from 'react-router';
 
+
 import SidebarLayout from 'src/layouts/SidebarLayout';
 import BaseLayout from 'src/layouts/BaseLayout';
 
@@ -17,10 +18,14 @@ const Loader = (Component) => (props) =>
 // Pages
 
 const Overview = Loader(lazy(() => import('src/content/overview')));
+const HomePage = Loader(lazy(() => import('src/content/pages/Home')));
+const PortfolioPage = Loader(lazy(() => import('src/content/pages/Portfolio')));
+const AboutMePage = Loader(lazy(() => import('src/content/pages/AboutMe')));
+const ContactMePage = Loader(lazy(() => import('src/content/pages/ContactMe')));
 
 // Dashboards
 
-const Crypto = Loader(lazy(() => import('src/content/dashboards/Crypto')));
+const Home = Loader(lazy(() => import('src/content/dashboards/Home')));
 
 // Applications
 
@@ -79,15 +84,28 @@ const StatusMaintenance = Loader(
 const routes: RouteObject[] = [
   {
     path: '',
-    element: <BaseLayout />,
+    element: <SidebarLayout />,
     children: [
       {
         path: '/',
-        element: <Overview />
+        element: <HomePage />
       },
       {
-        path: 'overview',
-        element: <Navigate to="/" replace />
+        path: 'pages',
+        children:[
+          {
+            path: 'Portfolio',
+            element:<PortfolioPage />
+          },
+          {
+            path: 'AboutMe',
+            element:<AboutMePage />
+          },
+          {
+            path: 'ContactMe',
+            element:<ContactMePage />
+          }
+        ]
       },
       {
         path: 'status',
@@ -126,11 +144,11 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '',
-        element: <Navigate to="crypto" replace />
+        element: <Navigate to="Home" replace />
       },
       {
-        path: 'crypto',
-        element: <Crypto />
+        path: 'Home',
+        element: <Home />
       },
       {
         path: 'messenger',

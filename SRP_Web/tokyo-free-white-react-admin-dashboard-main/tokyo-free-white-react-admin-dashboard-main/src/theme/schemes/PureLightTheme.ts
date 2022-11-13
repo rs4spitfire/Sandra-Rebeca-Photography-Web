@@ -1,5 +1,7 @@
 import { alpha, createTheme, lighten, darken } from '@mui/material';
 import '@mui/lab/themeAugmentation';
+import BOD_R from './BOD_R.ttf'
+import BodoniMTStd from './src/fonts/BodoniMTStd.otf'
 
 const themeColors = {
   primary: '#A3D1D9',
@@ -573,7 +575,10 @@ export const PureLightTheme = createTheme({
       },
       styleOverrides: {
         root: {
-          color: colors.alpha.black[100],
+          fontFamily:'Italiana',
+          letterSpacing: 2,
+          
+          color: colors.secondary.dark,
           padding: 0,
           height: 38,
           minHeight: 38,
@@ -587,12 +592,12 @@ export const PureLightTheme = createTheme({
             marginRight: 4
           },
           '&.Mui-selected, &.Mui-selected:hover': {
-            color: colors.secondary.dark,
+            color: colors.alpha.black[100],
             zIndex: 5,
             background: colors.primary.light
           },
           '&:hover': {
-            color: colors.secondary.dark
+            color: colors.alpha.black[100]
           }
         }
       }
@@ -739,6 +744,7 @@ export const PureLightTheme = createTheme({
       }
     },
     MuiList: {
+      
       styleOverrides: {
         root: {
           padding: 0,
@@ -1118,9 +1124,10 @@ export const PureLightTheme = createTheme({
     borderRadius: 10
   },
   typography: {
-    fontFamily:
-      'Marcellus',
+    fontFamily:'Source Sans Pro',
+    
     h1: {
+      paddingLeft:'10px',
       fontWeight: 700,
       fontSize: 35
     },
@@ -1129,13 +1136,16 @@ export const PureLightTheme = createTheme({
       fontSize: 30
     },
     h3: {
-      fontWeight: 700,
-      fontSize: 25,
+      fontFamily: 'BOD_R',
+      fontWeight: 600,
+      paddingLeft: '10px',
+      letterSpacing: 2,
+      fontSize: 24,
       lineHeight: 1.4,
       color: colors.alpha.black[100]
     },
     h4: {
-      fontWeight: 700,
+      fontWeight: 500,
       fontSize: 16
     },
     h5: {
@@ -1145,15 +1155,18 @@ export const PureLightTheme = createTheme({
     h6: {
       fontSize: 15
     },
-    body1: {
-      fontSize: 14
+    body1: { fontFamily: 'BOD_R',     
+      paddingLeft: '10px',
+      letterSpacing:1,
+      fontSize: 18
     },
-    body2: {
-      fontSize: 14
+    body2: {fontFamily: 'BOD_R',
+    paddingLeft: '10px',
+    fontSize: 18
     },
     button: {
-      fontWeight: 600,
-      fontSize:18
+      fontWeight: 1000,
+      fontSize:16
     },
     caption: {
       fontSize: 13,

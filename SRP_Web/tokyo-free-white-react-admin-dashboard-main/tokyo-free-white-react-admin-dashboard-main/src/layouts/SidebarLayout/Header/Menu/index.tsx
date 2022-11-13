@@ -4,8 +4,10 @@ import { useRef, useState } from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import {Button} from '@mui/material'
+import Link from '@mui/material/Link';
+import {Button} from '@mui/material';
 import { NavLink as RouterLink } from 'react-router-dom';
+
 
 
 function HeaderTitle() {
@@ -14,69 +16,26 @@ function HeaderTitle() {
   return (
     <>    
     <Box sx={{ width: '100%' }}>
-    <Tabs
-      
-     
-      TabIndicatorProps={{
-        style: {transition: 'none'}
-      }}      
-      aria-label="secondary tabs example"
-    >
-    <Button
-      disableRipple
-      component={RouterLink}
-                  
-      to="/dashboards/messenger"                  
-      >Introduction</Button>
-      <Button
-      disableRipple
-      component={RouterLink}
-                  
-      to="/dashboards/messenger"                  
-      >Newborn</Button>
-      <Button
-      disableRipple
-      component={RouterLink}
-                  
-      to="/dashboards/messenger"                  
-      >Family</Button>
-    </Tabs>
-    
+      <Tabs TabIndicatorProps={{style: {transition: 'none'}}}>
+        
+        <Button disableRipple component={RouterLink} to="/">Home</Button>  
+        <Button disableRipple component={RouterLink} to="/pages/Portfolio">Portfolio</Button>
+      </Tabs> 
     </Box>
+    <Link href="/">
       <img
-          src="/static/images/logo/SRP_Logo_Cropped.png"
+          src="/static/images/logo/SRP_Logo_Cropped.png"          
           alt="SRP Logo"
           width={221}
           height={143}
-          />
-          <Box sx={{ width: '100%' }}>
-    <Tabs
-      
-      TabIndicatorProps={{
-        style: {transition: 'none'}
-      }}        
-      aria-label="secondary tabs example"
-    >
-    <Button
-      disableRipple
-      component={RouterLink}
-                  
-      to="/dashboards/messenger"                  
-      >Portrait</Button>
-      <Button
-      disableRipple
-      component={RouterLink}
-                  
-      to="/dashboards/messenger"                  
-      >Nature</Button>
-      <Button
-      disableRipple
-      component={RouterLink}
-                  
-      to="/dashboards/messenger"                  
-      >Contact</Button>
-    </Tabs>
-  </Box>
+      />
+    </Link>    
+    <Box sx={{ width: '100%' }}>        
+      <Tabs TabIndicatorProps={{style: {transition: 'none'}}}>
+        <Button disableRipple component={RouterLink} to="/pages/AboutMe">About Me</Button>
+        <Button disableRipple component={RouterLink} to="/Pages/ContactMe">Contact</Button>
+      </Tabs>
+    </Box>
     </>
   );
 }
