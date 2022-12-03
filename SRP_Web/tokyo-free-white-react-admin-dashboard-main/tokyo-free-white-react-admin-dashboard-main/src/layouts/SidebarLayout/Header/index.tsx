@@ -15,6 +15,7 @@ import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
 import { SidebarContext } from 'src/contexts/SidebarContext';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 
+
 import HeaderButtons from './Buttons';
 import HeaderUserbox from './Userbox';
 import HeaderTitle from './Menu';
@@ -43,9 +44,10 @@ function Header() {
   const theme = useTheme();
 
   return (
+    
     <HeaderWrapper
       display="flex"
-      alignItems="center"
+      alignItems="left"
       sx={{
         boxShadow:
           theme.palette.mode === 'light'
@@ -70,19 +72,7 @@ function Header() {
       >
         <HeaderTitle />
       </Stack>
-      <Box display="flex" alignItems="center">
-        
-        
-        <Box
-          component="span"
-          sx={{
-            ml: 2,
-            display: { lg: 'none', xs: 'inline-block' }
-          }}
-        >
-          
-        </Box>
-      </Box>
+      
     </HeaderWrapper>
   );
 }

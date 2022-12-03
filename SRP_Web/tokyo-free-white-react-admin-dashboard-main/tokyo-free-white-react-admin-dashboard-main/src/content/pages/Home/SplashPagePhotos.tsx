@@ -12,8 +12,8 @@ import ImageListItem from '@mui/material/ImageListItem';
 
 export default function SplashPagePhotos() {
   return (
-    <Box sx={{ width: "100%", height: 1000 }}>
-      <ImageList variant="masonry" cols={2} gap={8}>
+    <Box sx={{ width: "100%", height: 1500 }}>
+      <ImageList variant="standard" cols={2} gap={8}>
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
             <img
@@ -33,23 +33,28 @@ export default function SplashPagePhotos() {
 
 const itemData = [
     {
-        img: '/static/images/Photos/5.jpg',
-        title: 'Ian and Baby Isa',
+        img: '/static/images/Photos/HomePage/3.jpg',
+        title: '3',
       },
   {
-    img: '/static/images/Photos/1.jpg',
-    title: 'Baby Isa Wrapped',
+    img: '/static/images/Photos/HomePage/1.jpg',
+    title: '1',
   },
   {
-    img: '/static/images/Photos/2.jpg',
-    title: 'Baby Isa Sleep Side',
+    img: '/static/images/Photos/HomePage/2.jpg',
+    title: '2',
   },
   {
-    img: '/static/images/Photos/3.jpg',
-    title: 'Ian Strawberries',
+    img: '/static/images/Photos/HomePage/4.jpg',
+    title: '4',
   },
   {
-    img: '/static/images/Photos/4.jpg',
-    title: 'Ian Bike',
-  }  
+    img: '/static/images/Photos/HomePage/5.jpg',
+    title: '5',
+  },
+  {
+    img: '/static/images/Photos/HomePage/6.jpg',
+    title: '6',
+  }    
+
 ];

@@ -15,13 +15,22 @@ const Loader = (Component) => (props) =>
     </Suspense>
   );
 
-// Pages
+// Main Pages
 
-const Overview = Loader(lazy(() => import('src/content/overview')));
+
 const HomePage = Loader(lazy(() => import('src/content/pages/Home')));
 const PortfolioPage = Loader(lazy(() => import('src/content/pages/Portfolio')));
 const AboutMePage = Loader(lazy(() => import('src/content/pages/AboutMe')));
 const ContactMePage = Loader(lazy(() => import('src/content/pages/ContactMe')));
+
+//Portfolio Pages
+const EventPage = Loader(lazy(() => import('src/content/pages/Portfolio/Events')));
+const FamilyPage = Loader(lazy(() => import('src/content/pages/Portfolio/Family')));
+const NaturePage = Loader(lazy(()=> import('src/content/pages/Portfolio/Nature')));
+const PortraitPage = Loader(lazy(() => import('src/content/pages/Portfolio/Portrait')));
+const NewbornPage = Loader(lazy(() => import('src/content/pages/Portfolio/Newborn')));
+const RealEstatePage = Loader(lazy(() => import('src/content/pages/Portfolio/RealEstate')));
+
 
 // Dashboards
 
@@ -96,6 +105,7 @@ const routes: RouteObject[] = [
           {
             path: 'Portfolio',
             element:<PortfolioPage />
+            
           },
           {
             path: 'AboutMe',
@@ -106,6 +116,35 @@ const routes: RouteObject[] = [
             element:<ContactMePage />
           }
         ]
+      },
+      {
+        path: '/pages/Portfolio',
+        children:[          
+            {
+              path:'EVENTS',
+              element: <EventPage />
+            },
+            {
+              path:'FAMILY',
+              element: <FamilyPage />
+            },
+            {
+              path:'NATURE',
+              element: <NaturePage />
+            },
+            {
+              path:'NEWBORN',
+              element: <NewbornPage />
+            },
+            {
+              path:'PORTRAITS',
+              element: <PortraitPage />
+            },
+            {
+              path:'REAL%20ESTATE',
+              element: <StatusComingSoon />
+            }         
+          ]
       },
       {
         path: 'status',

@@ -12,11 +12,9 @@ import Divider from '@mui/material/Divider'
 
 function PortfolioPage(props){
     const theme = useTheme();
-    return(<>
-    
+    return(<>    
     <SelectGallery />
-    </>
-    
+    </>    
     );
 }
 

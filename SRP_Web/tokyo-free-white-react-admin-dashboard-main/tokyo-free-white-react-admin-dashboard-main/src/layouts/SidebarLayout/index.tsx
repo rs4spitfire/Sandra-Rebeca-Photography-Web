@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react';
 import { Box, alpha, lighten, useTheme } from '@mui/material';
 import { Outlet } from 'react-router-dom';
+import {Helmet} from 'react-helmet-async';
 
 import Sidebar from './Sidebar';
 import Header from './Header';
@@ -14,6 +15,10 @@ const SidebarLayout: FC<SidebarLayoutProps> = () => {
 
   return (
     <>
+    <Helmet>
+      <link rel="SR Icon" type="image/png" href="/static/images/logo/SRIcon.png" sizes="16x16" />
+      <title>Sandra Rebeca Photography</title>
+    </Helmet>
       <Box
         sx={{
           flex: 1,

@@ -95,11 +95,12 @@ const colors = {
   },
   secondary: {
     lighter: lighten(themeColors.secondary, 0.85),
-    light: lighten(themeColors.secondary, 0.25),
+    light: lighten(themeColors.secondary, 0.1),
     main: themeColors.secondary,
-    dark: darken(themeColors.secondary, 0.2)
+    dark: darken(themeColors.secondary, 0.3),
   },
   primary: {
+    hint: lighten(themeColors.primary,0.95),
     lighter: lighten(themeColors.primary, 0.85),
     light: lighten(themeColors.primary, 0.80),
     main: themeColors.primary,
@@ -575,7 +576,7 @@ export const PureLightTheme = createTheme({
       },
       styleOverrides: {
         root: {
-          fontFamily:'Italiana',
+          fontFamily:'Source Sans Pro',
           letterSpacing: 2,
           
           color: colors.secondary.dark,
@@ -592,11 +593,15 @@ export const PureLightTheme = createTheme({
             marginRight: 4
           },
           '&.Mui-selected, &.Mui-selected:hover': {
-            color: colors.alpha.black[100],
+            color: colors.secondary.dark,
             zIndex: 5,
             background: colors.primary.light
           },
           '&:hover': {
+           
+            
+            fontWeight: 700,
+            
             color: colors.alpha.black[100]
           }
         }
@@ -1132,6 +1137,7 @@ export const PureLightTheme = createTheme({
       fontSize: 35
     },
     h2: {
+      textAlign:'center',
       fontWeight: 700,
       fontSize: 30
     },
@@ -1174,7 +1180,9 @@ export const PureLightTheme = createTheme({
       color: colors.alpha.black[50]
     },
     subtitle1: {
-      fontSize: 14,
+      fontFamily: 'BOD_R',
+      fontWeight: 700,
+      fontSize: 46,
       color: colors.alpha.black[70]
     },
     subtitle2: {

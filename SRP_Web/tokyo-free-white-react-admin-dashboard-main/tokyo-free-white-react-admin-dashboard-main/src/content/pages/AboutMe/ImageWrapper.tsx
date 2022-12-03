@@ -33,7 +33,7 @@ export default function ImageWrapper() {
 
 const itemData = [
     {
-        img: '/static/images/Photos/Sandra_Posing_w_Lens.jpg',
+        img: '/static/images/Photos/AboutMe/Sandra_Posing_w_Lens.jpg',
         title: 'Sandra with Lens',
       }  
 ];

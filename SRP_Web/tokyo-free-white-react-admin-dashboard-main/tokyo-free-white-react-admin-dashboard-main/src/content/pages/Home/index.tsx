@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+
 import { useTheme } from '@mui/styles';
 
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
@@ -14,10 +14,7 @@ import SplashPagePhotos from './SplashPagePhotos';
           />*/
 function HomePage(props) {
   return (
-    <>
-      <Helmet>
-        <title>Sandra Rebeca Photography</title>
-      </Helmet>
+    <>      
       <SplashPagePhotos/>    
       <Footer />
     </>

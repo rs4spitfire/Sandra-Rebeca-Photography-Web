@@ -32,11 +32,11 @@ export default function ImageWrapper() {
 
 const itemData = [
     {
-        img: '/static/images/Photos/Sandra_BW.jpg',
+        img: '/static/images/Photos/AboutMe/Sandra_BW.jpg',
         title: 'Sandra Black and White'
       },
       {
-        img: '/static/images/Photos/Sandra_Kids.jpg',
+        img: '/static/images/Photos/AboutMe/Sandra_Kids.jpg',
         title: 'Sandra with Kids'
       }
 ];

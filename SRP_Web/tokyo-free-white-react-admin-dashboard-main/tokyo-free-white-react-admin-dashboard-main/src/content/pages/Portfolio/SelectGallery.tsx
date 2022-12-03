@@ -25,10 +25,10 @@ function SelectGallery() {
 
 
   return (
-    <Box alignItems="center" sx={{ padding: "10px",width: "90%", justifyContent: "center" }}>
-      <ImageList variant="standard" cols={3} gap={10}>
+    <Box alignItems="center" sx={{ padding: "10px",width: "100%", justifyContent: "center" }}>
+      <ImageList  variant="masonry" cols={2} gap={10} >
         {itemData.map((item) => (
-          <ImageListItem component={RouterLink} to={'/pages/' + item.title} key={item.img}>
+          <ImageListItem component={RouterLink} to={'/pages/Portfolio/' + item.title} key={item.img}>
             
             <img
               src={`${item.img}?w=248&fit=crop&auto=format`}
@@ -40,7 +40,7 @@ function SelectGallery() {
             <ImageListItemBar   sx={{background:
                   'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
                   'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
-                  '.MuiImageListItemBar-title':{color:theme.colors.alpha.white[100]}}}
+                  '.MuiImageListItemBar-title':{color:theme.colors.alpha.white[100], fontSize:18} }}
                 title={item.title}
                 position="top"
                
@@ -55,20 +55,30 @@ function SelectGallery() {
 export default SelectGallery;
 
 const itemData = [
-    {
-        img: '/static/images/Photos/Family2.jpg',
-        title: 'FAMILY'
+      {
+        img: '/static/images/Photos/Covers/Paulina1.jpg',
+        title: 'PORTRAITS',
+        credit: 'Sandra Rebeca Photography'
+
       },
       {
-        img: '/static/images/Photos/1.jpg',
-        title: 'NEWBORN'
+        img: '/static/images/Photos/Covers/NewbornIsa.jpg',
+        title: 'NEWBORN',
+        credit: 'Sandra Rebeca Photography'
       },
       {
-        img: '/static/images/Photos/Nature.jpg',
-        title: 'NATURE'
-      },
+        img: '/static/images/Photos/Covers/Family2.jpg',
+        title: 'FAMILY',
+        credit: 'Sandra Rebeca Photography'
+      },      
       {
-        img: '/static/images/Photos/Paulina1.jpg',
-        title: 'PORTRAITS'
+        img: '/static/images/Photos/Covers/Nature.jpg',
+        title: 'NATURE',
+        credit: 'Sandra Rebeca Photography'
+      },      
+      {
+        img:'/static/images/Photos/Covers/Silver Tones Event.jpg',
+        title: 'EVENTS',
+        credit: 'Sandra Rebeca Photography'
       }
 ];
