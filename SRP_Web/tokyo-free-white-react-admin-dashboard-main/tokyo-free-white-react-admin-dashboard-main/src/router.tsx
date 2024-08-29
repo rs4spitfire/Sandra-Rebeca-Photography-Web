@@ -31,7 +31,8 @@ const PortraitPage = Loader(lazy(() => import('src/content/pages/Portfolio/Portr
 const NewbornPage = Loader(lazy(() => import('src/content/pages/Portfolio/Newborn')));
 const RealEstatePage = Loader(lazy(() => import('src/content/pages/Portfolio/RealEstate')));
 
-
+//Gallery Pages
+const CarlasFamily = Loader(lazy(()=>import('src/content/pages/CarlasFamily')))
 // Dashboards
 
 const Home = Loader(lazy(() => import('src/content/dashboards/Home')));
@@ -145,6 +146,15 @@ const routes: RouteObject[] = [
               element: <StatusComingSoon />
             }         
           ]
+      },
+      {
+        path:'/pages/Galleries',
+        children:[
+          {
+            path:'CarlasFamily',
+            element: <CarlasFamily />
+          }
+        ]
       },
       {
         path: 'status',
