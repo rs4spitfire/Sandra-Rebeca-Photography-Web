@@ -34,12 +34,7 @@ const portraitImages = [
         img: '/static/images/Photos/Portrait/Mariela2.jpg',
         title: 'Mariela 2'
 
-    },
-    {
-        img: '/static/images/Photos/Portrait/Michael2.jpg',
-        title: 'Michael 2'
-
-    },
+    },    
     {
         img: '/static/images/Photos/Portrait/8947.jpg',
         title: '1'
@@ -69,6 +64,5 @@ const portraitImages = [
         img: '/static/images/Photos/Portrait/8977.jpg',
         title: '2'
 
-    }
-    
+    }    
 ];

@@ -11,74 +11,118 @@ export default FamilyPage;
 const FamilyImages = [
     {
         img: '/static/images/Photos/Family/1.jpg',
-        title: 'Sheppard Family'
+        title: ''
 
     },
     {
         img: '/static/images/Photos/Family/2.jpg',
-        title: 'Ian and Isa'
-
-    },
-    
-    {
-        img: '/static/images/Photos/Family/14.jpg',
-        title: 'Ian'
+        title: ''
 
     },
     {
         img: '/static/images/Photos/Family/3.jpg',
-        title: 'Marta\'s Family'
+        title: ''
 
     },
     {
         img: '/static/images/Photos/Family/4.jpg',
-        title: 'Marta\'s Girls'
+        title: ''
 
     },
     
     {
         img: '/static/images/Photos/Family/5.jpg',
-        title: 'Isa Sugar'
+        title: ''
 
     },
     {
         img: '/static/images/Photos/Family/6.jpg',
-        title: 'Wilber\'s Kids1'
+        title: ''
 
     },
     {
         img: '/static/images/Photos/Family/7.jpg',
-        title: 'Wilber\'s Kids2'
+        title: ''
 
     },
     {
         img: '/static/images/Photos/Family/8.jpg',
-        title: 'Wilber\'s Kids3'
+        title: ''
 
     },
     {
         img: '/static/images/Photos/Family/9.jpg',
-        title: 'Norma\'s Girls'
+        title: ''
 
     },
     {
         img: '/static/images/Photos/Family/10.jpg',
-        title: 'Norma and Family'
+        title: ''
 
     },
     {
         img: '/static/images/Photos/Family/11.jpg',
-        title: 'Erik and Mel'
+        title: ''
 
     },
     {
         img: '/static/images/Photos/Family/12.jpg',
-        title: 'Darrin\'s Kids'
+        title: ''
 
     },
     {
         img: '/static/images/Photos/Family/13.jpg',
-        title: 'Ian and Isa'
+        title: ''
+
+    },
+    {
+        img: '/static/images/Photos/Family/14.jpg',
+        title: ''
+
+    },
+    {
+        img: '/static/images/Photos/Family/15.jpg',
+        title: ''
+
+    },
+    {
+        img: '/static/images/Photos/Family/16.jpg',
+        title: ''
+
+    },
+    {
+        img: '/static/images/Photos/Family/17.jpg',
+        title: ''
+
+    },
+    {
+        img: '/static/images/Photos/Family/18.jpg',
+        title: ''
+
+    },
+    {
+        img: '/static/images/Photos/Family/19.jpg',
+        title: ''
+
+    },
+    {
+        img: '/static/images/Photos/Family/20.jpg',
+        title: ''
+
+    },
+    {
+        img: '/static/images/Photos/Family/21.jpg',
+        title: ''
+
+    },
+    {
+        img: '/static/images/Photos/Family/22.jpg',
+        title: ''
+
+    },
+    {
+        img: '/static/images/Photos/Family/23.jpg',
+        title: ''
 
     }
 ];
