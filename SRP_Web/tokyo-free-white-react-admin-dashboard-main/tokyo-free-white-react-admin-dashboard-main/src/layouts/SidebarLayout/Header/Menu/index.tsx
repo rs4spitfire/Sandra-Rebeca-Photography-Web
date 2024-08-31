@@ -68,7 +68,7 @@ function HeaderTitle() {
   </Link>
       <Box sx={{ width: '100%' }}>
     { window.innerWidth>=760 && <div><Button disableRipple component={RouterLink} to="/pages/Portfolio">Portfolio</Button>
-        <Button disableRipple  component={RouterLink} to="/">Journal</Button>
+        <Button disableRipple  component={RouterLink} to="/pages/Journal">Journal</Button>
         <Button disableRipple component={RouterLink} to="/pages/AboutMe">About Me</Button>
         <Button disableRipple  component={RouterLink} to="/Pages/ContactMe">Contact</Button></div>}
    
@@ -85,7 +85,7 @@ function HeaderTitle() {
       ><ClickAwayListener onClickAway={closePopUp}><Card variant="outlined" onBlur={closePopUp}>
         <CardContent>
         <div><Button disableRipple onClick={closePopUp} component={RouterLink} to="/pages/Portfolio">Portfolio</Button></div>
-        <div><Button disableRipple onClick={closePopUp} component={RouterLink} to="/">Journal</Button></div>
+        <div><Button disableRipple onClick={closePopUp} component={RouterLink} to="/pages/Journal">Journal</Button></div>
         <div><Button disableRipple onClick={closePopUp} component={RouterLink} to="/pages/AboutMe">About Me</Button></div>
         <Button disableRipple onClick={closePopUp} component={RouterLink} to="/Pages/ContactMe">Contact</Button>
         </CardContent>        

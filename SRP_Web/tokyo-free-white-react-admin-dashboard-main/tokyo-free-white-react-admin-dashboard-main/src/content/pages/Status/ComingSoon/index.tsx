@@ -108,7 +108,7 @@ function StatusComingSoon() {
           <Box textAlign="center" mb={3}>
             <Container maxWidth="xs">
               <Typography variant="h1" sx={{ mt: 4, mb: 2 }}>
-                Coming Soon
+                Web Site is Under Construction
               </Typography>
             </Container>
             <img

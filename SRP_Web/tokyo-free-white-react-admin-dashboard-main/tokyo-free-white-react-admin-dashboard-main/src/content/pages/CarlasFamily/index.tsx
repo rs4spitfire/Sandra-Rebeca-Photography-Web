@@ -2,7 +2,7 @@ import ImageListComponent from 'src/content/pages/Portfolio/ImageListComponent';
 
 function CarlasFamily(){
     return(<>
-    <ImageListComponent itemList={EventsImages} numColumns={2} gapSize={4} bannerTitle="Carla's Family Photoshoot"></ImageListComponent>    
+    <ImageListComponent itemList={EventsImages} numColumns={2} gapSize={15} bannerTitle="Payne Family"></ImageListComponent>    
     </>);
 }
 

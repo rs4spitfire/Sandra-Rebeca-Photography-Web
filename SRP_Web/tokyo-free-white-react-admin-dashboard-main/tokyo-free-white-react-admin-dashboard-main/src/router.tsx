@@ -110,11 +110,15 @@ const routes: RouteObject[] = [
           },
           {
             path: 'AboutMe',
-            element:<AboutMePage />
+            element:<StatusComingSoon />
           },
           {
             path: 'ContactMe',
-            element:<ContactMePage />
+            element:<StatusComingSoon />
+          },
+          {
+            path: 'Journal',
+            element:<StatusComingSoon />
           }
         ]
       },
@@ -140,18 +144,14 @@ const routes: RouteObject[] = [
             {
               path:'PORTRAITS',
               element: <PortraitPage />
-            },
-            {
-              path:'REAL%20ESTATE',
-              element: <StatusComingSoon />
-            }         
+            }        
           ]
       },
       {
         path:'/pages/Galleries',
         children:[
           {
-            path:'CarlasFamily',
+            path:'PayneFamily',
             element: <CarlasFamily />
           }
         ]
