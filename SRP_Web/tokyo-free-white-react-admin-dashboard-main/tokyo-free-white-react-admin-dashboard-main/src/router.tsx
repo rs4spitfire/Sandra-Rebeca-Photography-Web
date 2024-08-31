@@ -98,7 +98,7 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '/',
-        element: <HomePage />
+        element: <PortfolioPage />
       },
       {
         path: 'pages',
