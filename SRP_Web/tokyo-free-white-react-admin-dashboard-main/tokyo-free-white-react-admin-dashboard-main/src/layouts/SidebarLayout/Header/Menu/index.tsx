@@ -1,49 +1,45 @@
-import { Typography, Badge, useTheme,Popover,Card,CardContent } from '@mui/material';
-import { useRef, useState,useEffect } from 'react';
-import {ClickAwayListener} from '@mui/base';
-
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import {Button} from '@mui/material';
+import {
+  Typography, Badge, useTheme, Popover, Card, CardContent, Button, IconButton, Link, Box, Menu, MenuItem
+} from '@mui/material';
+import { useRef, useState, useEffect } from 'react';
+import { ClickAwayListener } from '@mui/base';
 import { NavLink as RouterLink } from 'react-router-dom';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import {useMediaQuery} from 'react-responsive';
-import IconButton from '@mui/material/IconButton';
-
 import MenuIcon from '@mui/icons-material/Menu';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
-  console.log("Window Size: "+window.innerWidth);
-  return {
-    
-    width,
-    height
-  };
+  return { width, height };
 }
 
-
-
 function HeaderTitle() {
-  
   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-  const divRef=useRef();
-  const [anchorEl,setAnchorEl]=useState();
-  const open=Boolean(anchorEl);
-  const id = open?"simple-popover":undefined;
+  const divRef = useRef();
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [dropdownAnchorEl, setDropdownAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const dropdownOpen = Boolean(dropdownAnchorEl);
+  const id = open ? "simple-popover" : undefined;
 
-  function openPopUp(){
-    console.log("click");
-    console.log(divRef)
-    setTimeout(()=>setAnchorEl(divRef?.current),1)
-  };
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  function closePopUp(){
-    //console.log(divRef);
+  function openPopUp() {
+    setAnchorEl(divRef.current);
+  }
+
+  function closePopUp() {
     setAnchorEl(null);
   }
+
+  const handlePortfolioHover = (event) => {
+    setDropdownAnchorEl(event.currentTarget);
+  };
+
+  const handleDropdownClose = () => {
+    setDropdownAnchorEl(null);
+  };
 
   useEffect(() => {
     function handleResize() {
@@ -55,66 +51,155 @@ function HeaderTitle() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const theme = useTheme();
+  const navItems = [
+    { label: "Portfolio", path: "/pages/Portfolio" },
+    { label: "Prices", path: "/pages/Business" },
+    { label: "About Me", path: "/pages/AboutMe" },
+    { label: "Contact", path: "/pages/ContactMe" }
+  ];
+
+  const portfolioItems = [
+    { label: "Family", path: "/pages/Portfolio/Family" },
+    { label: "Newborn", path: "/pages/Portfolio/Newborn" },
+    { label: "Engagement", path: "/pages/Portfolio/Engagement" },
+    { label: "Senior Photos", path: "/pages/Portfolio/SeniorPhotos" },
+    { label: "Modeling Portraits", path: "/pages/Portfolio/ModelingPortraits" }
+  ];
 
   return (
-    <> <Link href="/">
-    <img
-        src="/static/images/logo/SRP_Logo_Cropped.png"          
-        alt="SRP Logo"
-        width={221}
-        height={143}
-    />
-  </Link>
+    <>
+      <Link href="/">
+        <img
+          src="/static/images/logo/SRP_Logo_Cropped.png"
+          alt="SRP Logo"
+          width={221}
+          height={143}
+        />
+      </Link>
+
       <Box sx={{ width: '100%' }}>
-    { window.innerWidth>=760 && <div><Button disableRipple component={RouterLink} to="/pages/Portfolio">Portfolio</Button>
-        <Button disableRipple  component={RouterLink} to="/pages/Journal">Journal</Button>
-        <Button disableRipple component={RouterLink} to="/pages/AboutMe">About Me</Button>
-        <Button disableRipple  component={RouterLink} to="/Pages/ContactMe">Contact</Button></div>}
-   
-        
-    </Box>
-    <Popover
+        {!isMobile && (
+          <div>
+            {navItems.map((item) => (
+              item.label === "Portfolio" ? (
+                <Button
+                  key={item.label}
+                  disableRipple
+                  component={RouterLink}
+                  to={item.path}
+                  onMouseEnter={handlePortfolioHover}
+                  aria-controls={dropdownOpen ? 'portfolio-menu' : undefined}
+                  aria-haspopup="true"
+                >
+                  {item.label}
+                </Button>
+              ) : (
+                <Button
+                  key={item.label}
+                  disableRipple
+                  component={RouterLink}
+                  to={item.path}
+                >
+                  {item.label}
+                </Button>
+              )
+            ))}
+          </div>
+        )}
+      </Box>
+
+      {/* Dropdown Menu */}
+      <Menu
+  id="portfolio-menu"
+  anchorEl={dropdownAnchorEl}
+  open={dropdownOpen}
+  onClose={handleDropdownClose}
+  onMouseLeave={handleDropdownClose}
+  MenuListProps={{ onMouseLeave: handleDropdownClose }}
+  PaperProps={{
+    style: {
+      boxShadow: 'none',
+      position: 'absolute', // Position absolutely to avoid affecting layout
+      top: '100%', // Position below the button
+      left: 0, // Align with the left edge of the button
+      zIndex: theme.zIndex.modal, // Ensure it appears above other content
+    },
+  }}
+  sx={{
+    mt: 1, // Margin top to adjust spacing from the button
+    width: '200px', // Specify a fixed width for the dropdown menu
+  }}
+>
+  {portfolioItems.map((item) => (
+    <MenuItem
+      key={item.label}
+      component={RouterLink}
+      to={item.path}
+    >
+      {item.label}
+    </MenuItem>
+  ))}
+</Menu>
+
+      {/* Popover for Mobile Menu */}
+      <Popover
         id={id}
         open={open}
         anchorEl={divRef.current}
-        anchorOrigin={{
-          vertical:'top',
-          horizontal:'center'
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        onClose={closePopUp}
+        PaperProps={{
+          style: {
+            boxShadow: 'none', // Remove any shadow
+            backgroundColor: 'white', // Solid background color
+            backdropFilter: 'none', // Remove any blur effect
+            WebkitBackdropFilter: 'none', // Ensure compatibility with Webkit browsers
+          },
         }}
-      ><ClickAwayListener onClickAway={closePopUp}><Card variant="outlined" onBlur={closePopUp}>
-        <CardContent>
-        <div><Button disableRipple onClick={closePopUp} component={RouterLink} to="/pages/Portfolio">Portfolio</Button></div>
-        <div><Button disableRipple onClick={closePopUp} component={RouterLink} to="/pages/Journal">Journal</Button></div>
-        <div><Button disableRipple onClick={closePopUp} component={RouterLink} to="/pages/AboutMe">About Me</Button></div>
-        <Button disableRipple onClick={closePopUp} component={RouterLink} to="/Pages/ContactMe">Contact</Button>
-        </CardContent>        
-        </Card>  
-      </ClickAwayListener>    
-    </Popover>
-    {window.innerWidth<760 && <IconButton
-      //fontSize={`${window.innerWidth<760 ? "large": "medium"}`}
-      
-      //onClick={openPopUp}
-      //onBlur={closePopUp}
-      ref={divRef}
-        aria-label="more"
-        id="hamburger-button"
-        aria-controls={open ? 'long-menu' : undefined}
-        aria-expanded={open ? 'true' : undefined}
-        aria-haspopup="true"
-        sx={{color: theme.colors.secondary.dark}}
-        onClick={openPopUp}
+        sx={{
+          backdropFilter: 'none !important', // Ensure the entire backdrop has no blur
+          WebkitBackdropFilter: 'none !important', // Ensure compatibility with Webkit browsers
+        }}
       >
-        <MenuIcon fontSize="large"></MenuIcon>
-      </IconButton>}
-      <Link color={theme.colors.secondary.dark} underline="none" href="https://www.instagram.com/sandrar_photography/?hl=en" target="_blank">
-    <InstagramIcon fontSize={`${window.innerWidth<760 ? "large": "small"}`} ></InstagramIcon>
-    </Link>
+        <ClickAwayListener onClickAway={closePopUp}>
+          <Card variant="outlined">
+            <CardContent>
+              {navItems.map((item) => (
+                <div key={item.label}>
+                  <Button disableRipple onClick={closePopUp} component={RouterLink} to={item.path}>
+                    {item.label}
+                  </Button>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+        </ClickAwayListener>
+      </Popover>
+
+      {isMobile && (
+        <IconButton
+          ref={divRef}
+          aria-label="more"
+          aria-controls={open ? 'long-menu' : undefined}
+          aria-expanded={open ? 'true' : undefined}
+          aria-haspopup="true"
+          sx={{ color: theme.palette.secondary.dark }}
+          onClick={openPopUp}
+        >
+          <MenuIcon fontSize="large" />
+        </IconButton>
+      )}
+
+      <Link
+        color={theme.palette.secondary.dark}
+        underline="none"
+        href="https://www.instagram.com/sandrar_photography/?hl=en"
+        target="_blank"
+      >
+        <InstagramIcon fontSize={isMobile ? "large" : "small"} />
+      </Link>
     </>
   );
 }
 
 export default HeaderTitle;
-
-let windowSize=500;

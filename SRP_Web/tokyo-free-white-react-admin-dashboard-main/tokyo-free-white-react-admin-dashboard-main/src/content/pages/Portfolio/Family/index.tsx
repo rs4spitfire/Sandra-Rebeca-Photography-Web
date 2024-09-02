@@ -1,10 +1,15 @@
 import ImageListComponent from 'src/content/pages/Portfolio/ImageListComponent';
+import SelectFamily from './SelectFamily';
+import {ThemeProvider, useTheme} from '@mui/material/styles';
 
 function FamilyPage(){
-    return(<>
-    <ImageListComponent itemList={FamilyImages} numColumns={2} gapSize={4} bannerTitle="FAMILY"></ImageListComponent>    
-    </>);
+    const theme = useTheme();
+    return(<>    
+    <SelectFamily />
+    </>    
+    );
 }
+
 
 export default FamilyPage;
 

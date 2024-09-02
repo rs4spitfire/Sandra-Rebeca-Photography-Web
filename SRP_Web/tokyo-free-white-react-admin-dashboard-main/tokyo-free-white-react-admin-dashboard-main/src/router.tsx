@@ -7,6 +7,7 @@ import SidebarLayout from 'src/layouts/SidebarLayout';
 import BaseLayout from 'src/layouts/BaseLayout';
 
 import SuspenseLoader from 'src/components/SuspenseLoader';
+import PricingPage from 'src/content/pages/Business';
 
 const Loader = (Component) => (props) =>
   (
@@ -22,7 +23,7 @@ const HomePage = Loader(lazy(() => import('src/content/pages/Home')));
 const PortfolioPage = Loader(lazy(() => import('src/content/pages/Portfolio')));
 const AboutMePage = Loader(lazy(() => import('src/content/pages/AboutMe')));
 const ContactMePage = Loader(lazy(() => import('src/content/pages/ContactMe')));
-
+const BusinessPage = Loader(lazy(()=>import('src/content/pages/Business')))
 //Portfolio Pages
 const EventPage = Loader(lazy(() => import('src/content/pages/Portfolio/Events')));
 const FamilyPage = Loader(lazy(() => import('src/content/pages/Portfolio/Family')));
@@ -31,6 +32,8 @@ const PortraitPage = Loader(lazy(() => import('src/content/pages/Portfolio/Portr
 const NewbornPage = Loader(lazy(() => import('src/content/pages/Portfolio/Newborn')));
 const RealEstatePage = Loader(lazy(() => import('src/content/pages/Portfolio/RealEstate')));
 
+//Family Galleries
+const MarielaFamily = Loader(lazy(()=> import('src/content/pages/Portfolio/Family/Mariela')))
 //Gallery Pages
 const CarlasFamily = Loader(lazy(()=>import('src/content/pages/CarlasFamily')))
 // Dashboards
@@ -98,7 +101,7 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '/',
-        element: <PortfolioPage />
+        element: <HomePage />
       },
       {
         path: 'pages',
@@ -117,8 +120,8 @@ const routes: RouteObject[] = [
             element:<StatusComingSoon />
           },
           {
-            path: 'Journal',
-            element:<StatusComingSoon />
+            path: 'Business',
+            element:<PricingPage />
           }
         ]
       },
@@ -146,6 +149,15 @@ const routes: RouteObject[] = [
               element: <PortraitPage />
             }        
           ]
+      },
+      {
+        path:'/pages/Portfolio/FAMILY',
+        children:[
+          {
+            path:'Mariela%20Family',
+            element: <MarielaFamily />
+          }
+        ]
       },
       {
         path:'/pages/Galleries',

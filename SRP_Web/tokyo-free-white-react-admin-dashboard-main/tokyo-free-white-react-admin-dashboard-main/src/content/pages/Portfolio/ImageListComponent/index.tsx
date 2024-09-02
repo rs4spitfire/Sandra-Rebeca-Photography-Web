@@ -24,14 +24,8 @@ export default function ImageListComponent(props) {
       
   return (
     <>
-    <Box sx={{ flexGrow: 1, paddingTop: "10px", paddingLeft: "10px", paddingRight:"10px" }}>
-      <AppBar position="static" sx={{background:theme.colors.secondary.lighter}}>
-        <Toolbar sx={{height:100, justifyContent:'center'}}>
-          <Typography sx={{color: theme.colors.alpha.black[75]}} variant="subtitle1">{props.bannerTitle}</Typography>          
-        </Toolbar>
-      </AppBar>
-    </Box>
-    <Box sx={{ padding: "10px",width: "100%", height: 1000 }}>
+    
+    <Box sx={{ padding: "10px",width: "100%", height: 1000,overflowY: 'auto', position: 'relative'}}>  
     
     <ImageList  variant="masonry" cols={props.numColumns} gap={props.gapSize}>
       {props.itemList.map((item) => (

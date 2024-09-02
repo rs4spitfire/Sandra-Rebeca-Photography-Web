@@ -330,11 +330,11 @@ export const PureLightTheme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: alpha(darken(themeColors.primaryAlt, 0.4), 0.2),
-          backdropFilter: 'blur(2px)',
+          backdropFilter: 'none',
 
           '&.MuiBackdrop-invisible': {
             backgroundColor: 'transparent',
-            backdropFilter: 'blur(2px)'
+            backdropFilter: 'none'
           }
         }
       }
@@ -856,13 +856,15 @@ export const PureLightTheme = createTheme({
         root: {
           background: 'transparent',
           transition: 'all .2s',
-
+          backgroundColor:'transparent',
           '&:hover, &:active, &.active, &.Mui-selected': {
             color: colors.alpha.black[100],
-            background: alpha(colors.primary.lighter, 0.4)
+            background: alpha(colors.primary.lighter, 0.4),
+            backgroundColor:'transparent',
           },
           '&.Mui-selected:hover': {
-            background: alpha(colors.primary.lighter, 0.4)
+            background: alpha(colors.primary.lighter, 0.4),
+            backgroundColor:'transparent'
           }
         }
       }
