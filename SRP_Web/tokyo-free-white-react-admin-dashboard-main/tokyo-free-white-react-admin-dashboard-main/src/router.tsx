@@ -117,7 +117,7 @@ const routes: RouteObject[] = [
           },
           {
             path: 'ContactMe',
-            element:<StatusComingSoon />
+            element:<ContactMePage />
           },
           {
             path: 'Business',

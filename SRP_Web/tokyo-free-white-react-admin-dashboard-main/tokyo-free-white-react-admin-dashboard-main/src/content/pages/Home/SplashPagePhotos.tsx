@@ -13,6 +13,8 @@ import Slider from 'react-slick';
 import { useTheme } from '@mui/material/styles';
 import { Button } from '@mui/material';
 
+
+
 const itemData = [
   {
     img: '/static/images/Photos/HomePage/3(resize).jpg',
