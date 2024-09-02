@@ -77,15 +77,17 @@ export default function SplashPagePhotos() {
 
       {/* Card Below Slider */}
       <Card
-        sx={{
-          width: '1500px',
+         sx={{
+          width: '100%', // Full width by default
+          maxWidth: '1500px', // Maximum width constraint
           margin: '50px auto',
           display: 'flex',
+          flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
           textAlign: 'center',
-          padding: '50px',
-          boxShadow: 3, // Shadow effect
+          padding: { xs: '20px', md: '50px' }, // Responsive padding
+          boxShadow: 3,
         }}
       >
         <CardContent>
@@ -95,7 +97,7 @@ export default function SplashPagePhotos() {
             sx={{ marginBottom: '20px' }} // Adds margin above the button
             href="#contact" // Adjust this href to your actual contact section or page
           >Let's Talk</Button>
-          <Typography sx={{ fontSize: 20 }} variant="body1">
+          <Typography sx={{ fontSize: { xs: 14, md: 20 } }} variant="body1">
             "Through my photography, I capture the genuine love, laughter, and connection that define family life, preserving those precious moments for generations to come. Every image tells the story of togetherness, reflecting the unique bond that makes each family beautifully unique."
           </Typography>          
         </CardContent>
@@ -114,7 +116,7 @@ export default function SplashPagePhotos() {
           boxShadow: '0 -1px 5px rgba(0, 0, 0, 0.3)',
         }}
       >
-        <Typography sx={{ fontSize: 14, opacity: 0.6 }} variant="body2" component="p">
+        <Typography sx={{ fontSize: { xs: 10, md: 14 }, opacity: 0.5 }} variant="body2" component="p">
           Web Site by Richard Sherwood | All photography by Sandra Rebeca Photography © 2024 | All rights reserved.
         </Typography>
         <Link
