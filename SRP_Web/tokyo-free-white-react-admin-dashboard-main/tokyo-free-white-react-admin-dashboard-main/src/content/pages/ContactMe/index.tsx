@@ -91,7 +91,7 @@ export default function ContactMePage() {
                 name="contact" // This is required for Netlify Forms
                 method="POST" 
                 data-netlify="true" // This attribute is required
-                data-netlify-honeypot="bot-field" // Honeypot for spam protection
+                //data-netlify-honeypot="bot-field" // Honeypot for spam protection
                 autoComplete="off"
               >
                 <input type="hidden" name="form-name" value="contact" /> {/* Hidden field for form name */}
