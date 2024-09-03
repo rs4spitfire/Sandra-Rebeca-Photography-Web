@@ -99,6 +99,7 @@ export default function ContactMePage() {
                   <Grid item xs={12}>
                     <Tooltip title="Enter your name">
                       <TextField
+                        id="name"
                         name="name"
                         label="Name"
                         variant="outlined"
@@ -110,6 +111,7 @@ export default function ContactMePage() {
                   </Grid>
                   <Grid item xs={12}>
                     <TextField
+                      id="phone"
                       name="phone"
                       label="Phone"
                       variant="outlined"
@@ -120,6 +122,7 @@ export default function ContactMePage() {
                   </Grid>
                   <Grid item xs={12}>
                     <TextField
+                      id="email"
                       name="email"
                       label="Email"
                       variant="outlined"
@@ -130,6 +133,7 @@ export default function ContactMePage() {
                   </Grid>
                   <Grid item xs={12}>
                     <TextField
+                      id="homeCity"
                       name="homeCity"
                       label="Home City"
                       variant="outlined"
@@ -139,6 +143,7 @@ export default function ContactMePage() {
                   </Grid>
                   <Grid item xs={12}>
                     <TextField
+                      id="placeToVisit"
                       name="placeToVisit"
                       label="One place you would like to visit"
                       variant="outlined"
@@ -148,6 +153,7 @@ export default function ContactMePage() {
                   </Grid>
                   <Grid item xs={12}>
                     <TextField
+                      id="photoLocation"
                       name="photoLocation"
                       label="Favorite Photography Location"
                       variant="outlined"

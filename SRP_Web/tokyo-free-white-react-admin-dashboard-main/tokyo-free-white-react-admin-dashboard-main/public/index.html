@@ -28,6 +28,17 @@
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="text" name="name" />
+        <input type="text" name="phone" />
+        <input type="text" name="email" />
+        <input type="text" name="homeCity" />
+        <input type="text" name="placeToVisit" />
+        <input type="text" name="photoLocation" />
+      </form>
+
+    </div>
   </body>
 </html>
