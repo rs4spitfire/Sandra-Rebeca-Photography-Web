@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -12,33 +11,32 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Slider from 'react-slick';
 import { useTheme } from '@mui/material/styles';
 import { Button } from '@mui/material';
-
-
+import { NavLink as RouterLink } from 'react-router-dom';
 
 const itemData = [
   {
-    img: '/static/images/Photos/HomePage/3(resize).jpg',
-    title: '3',
+    img: '/static/images/Photos/HomePage/Eliana.jpg',
+    title: 'Eliana',
   },
   {
-    img: '/static/images/Photos/HomePage/1(resize).jpg',
-    title: '1',
+    img: '/static/images/Photos/HomePage/Michael.jpg',
+    title: 'Michael',
   },
   {
-    img: '/static/images/Photos/HomePage/2(resize).jpg',
-    title: '2',
+    img: '/static/images/Photos/HomePage/Paulina.jpg',
+    title: 'Paulina',
   },
   {
-    img: '/static/images/Photos/HomePage/4(resize).jpg',
-    title: '4',
+    img: '/static/images/Photos/HomePage/Isabella.jpg',
+    title: 'Isabella',
   },
   {
-    img: '/static/images/Photos/HomePage/5(resize).jpg',
-    title: '5',
+    img: '/static/images/Photos/HomePage/Mariela.jpg',
+    title: 'Mariela',
   },
   {
-    img: '/static/images/Photos/HomePage/6(resize).jpg',
-    title: '6',
+    img: '/static/images/Photos/HomePage/IanEliana.jpg',
+    title: 'IanEliana',
   }
 ];
 
@@ -48,11 +46,15 @@ export default function SplashPagePhotos() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow: 1.1,
+    speed: 800,
+    slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <CustomNextArrow />,
     prevArrow: <CustomPrevArrow />,
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 3000, // Time interval between slides (in milliseconds)
+    fade: true, // Use fade transition
+    cssEase: 'linear' // Smooth easing function
   };
 
   return (
@@ -60,7 +62,16 @@ export default function SplashPagePhotos() {
       {/* Slider Container */}
       <Slider {...settings}>
         {itemData.map((item) => (
-          <Box key={item.img} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <Box 
+            key={item.img} 
+            sx={{ 
+              display: 'flex', 
+              justifyContent: 'center', 
+              alignItems: 'center', 
+              height: '700px', // Set fixed height here
+              overflow: 'hidden' // Ensure content does not overflow
+            }}
+          >
             <img
               src={`${item.img}?w=800&fit=crop&auto=format`}
               srcSet={`${item.img}?w=800&fit=crop&auto=format&dpr=2 2x`}
@@ -69,7 +80,7 @@ export default function SplashPagePhotos() {
               style={{
                 width: '100%',
                 height: '100%',
-                objectFit: 'cover',
+                objectFit: 'cover', // Cover the container
                 borderRadius: '0', // No rounded corners
               }}
             />
@@ -83,12 +94,14 @@ export default function SplashPagePhotos() {
           width: '100%', // Full width by default
           maxWidth: '1500px', // Maximum width constraint
           margin: '50px auto',
+          marginBottom: '300px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
           textAlign: 'center',
           padding: { xs: '20px', md: '50px' }, // Responsive padding
+          paddingBottom: '100px',
           boxShadow: 3,
         }}
       >
@@ -96,8 +109,17 @@ export default function SplashPagePhotos() {
         <Button
             variant="contained"
             color="primary"
-            sx={{ marginBottom: '20px' }} // Adds margin above the button
-            href="#contact" // Adjust this href to your actual contact section or page
+            component={RouterLink}
+            to={'/pages/ContactMe'}
+            sx={{ 
+              marginBottom: '20px', // Adds margin above the button
+              padding: '30px 40px', // Increase padding to make the button larger
+              width: '400px',
+              fontSize: 'inherit', // Inherit font size from theme or parent
+              '& .MuiButton-label': {
+                fontSize: 'inherit' // Ensure font size inside the button remains the same
+              }
+            }}            
           >Let's Talk</Button>
           <Typography sx={{ fontSize: { xs: 14, md: 20 } }} variant="body1">
             "Through my photography, I capture the genuine love, laughter, and connection that define family life, preserving those precious moments for generations to come. Every image tells the story of togetherness, reflecting the unique bond that makes each family beautifully unique."
@@ -111,7 +133,7 @@ export default function SplashPagePhotos() {
           width: '100%',
           backgroundColor: 'black',
           color: 'white',
-          padding: '20px',
+          padding: '50px',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
@@ -146,7 +168,7 @@ const CustomNextArrow = (props) => {
         transform: 'translateY(-50%)',
         width: 64,
         height: 64,
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        //backgroundColor: 'rgba(255, 255, 255, 0.2)',
         borderRadius: '50%',
         zIndex: 1,
         '&:hover': {
@@ -154,7 +176,7 @@ const CustomNextArrow = (props) => {
         },
       }}
     >
-      <ChevronRightIcon sx={{ fontSize: 48 }} />
+      <ChevronRightIcon sx={{ fontSize: 48,opacity:0.5 }} />
     </IconButton>
   );
 };
@@ -171,7 +193,7 @@ const CustomPrevArrow = (props) => {
         transform: 'translateY(-50%)',
         width: 64,
         height: 64,
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        //backgroundColor: 'rgba(255, 255, 255, 0.2)',
         borderRadius: '50%',
         zIndex: 1,
         '&:hover': {
@@ -179,7 +201,7 @@ const CustomPrevArrow = (props) => {
         },
       }}
     >
-      <ChevronLeftIcon sx={{ fontSize: 48 }} />
+      <ChevronLeftIcon sx={{ fontSize: 48,opacity:0.5 }} />
     </IconButton>
   );
 };

@@ -72,7 +72,7 @@ export default function ContactMePage() {
             }}
           >
             <img
-              src="/static/images/Photos/Sandra_Contact.jpg"
+              src="/static/images/Photos/Sandra_Posing_w_Lens.JPG"
               alt="Sandra with Lens"
               loading="lazy"
               title="Sandra with Lens"
