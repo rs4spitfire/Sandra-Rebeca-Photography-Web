@@ -56,29 +56,31 @@ export default SelectGallery;
 
 const itemData = [
       {
+        img: '/static/images/Photos/Covers/Family2.jpg',
+        title: 'FAMILY',
+        credit: 'Sandra Rebeca Photography'
+      },
+      {
         img: '/static/images/Photos/Covers/Paulina1.jpg',
         title: 'PORTRAITS',
         credit: 'Sandra Rebeca Photography'
 
       },
       {
+        img:'/static/images/Photos/Covers/Amber.jpg',
+        title: 'SENIOR',
+        credit: 'Sandra Rebeca Photography'
+      },
+      {
         img: '/static/images/Photos/Covers/NewbornIsa.jpg',
         title: 'NEWBORN',
         credit: 'Sandra Rebeca Photography'
       },
-      {
-        img: '/static/images/Photos/Covers/Family2.jpg',
-        title: 'FAMILY',
-        credit: 'Sandra Rebeca Photography'
-      },      
+           
       {
         img: '/static/images/Photos/Covers/Nature.jpg',
         title: 'NATURE',
         credit: 'Sandra Rebeca Photography'
-      },      
-      {
-        img:'/static/images/Photos/Covers/Silver Tones Event.jpg',
-        title: 'EVENTS',
-        credit: 'Sandra Rebeca Photography'
-      }
+      }    
+      
 ];

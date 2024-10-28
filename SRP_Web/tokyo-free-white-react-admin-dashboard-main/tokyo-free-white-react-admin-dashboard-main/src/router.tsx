@@ -148,6 +148,10 @@ const routes: RouteObject[] = [
               element: <SeniorPage />
             },
             {
+              path:'SENIOR',
+              element: <SeniorPage />
+            },
+            {
               path:'NATURE',
               element: <NaturePage />
             },
