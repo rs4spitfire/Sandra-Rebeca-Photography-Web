@@ -4,7 +4,7 @@ import ImageList from '@mui/material/ImageList';
 import { useTheme } from '@mui/material/styles';
 import { NavLink as RouterLink } from 'react-router-dom';
 
-function SelectFamily({ itemData }) {
+function SelectSenior({ itemData }) {
   const theme = useTheme();
 
   return (
@@ -42,7 +42,7 @@ function SelectFamily({ itemData }) {
             <Box
               key={item.img}
               component={RouterLink}
-              to={`/pages/Portfolio/FAMILY/${item.title}`}
+              to={`/pages/Portfolio/SeniorPhotos/${item.title}`}
               sx={{
                 position: 'relative', // Position container for title overlay
                 display: 'flex',
@@ -130,4 +130,4 @@ function SelectFamily({ itemData }) {
   );
 }
 
-export default SelectFamily;
+export default SelectSenior;

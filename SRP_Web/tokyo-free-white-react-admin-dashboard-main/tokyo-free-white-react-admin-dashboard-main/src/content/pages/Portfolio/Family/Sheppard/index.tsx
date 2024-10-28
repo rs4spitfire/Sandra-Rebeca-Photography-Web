@@ -9,40 +9,44 @@ const BlurryDialog = styled(Dialog)<DialogProps>(({ theme }) => ({
   
 const itemData = [
     {
-      img: '/static/images/Photos/Family/Mariela/JF (1 of 9).jpg',
-      title: 'Mariela Family 1'
+      img: '/static/images/Photos/Family/Sheppard/JF (1 of 10).jpg',
+      title: 'Sheppard Family 1'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (2 of 9).jpg',
-      title: 'Mariela Family 2'
+      img: '/static/images/Photos/Family/Sheppard/JF (2 of 10).jpg',
+      title: 'Sheppard Family 2'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (3 of 9).jpg',
-      title: 'Mariela Family 3'
+      img: '/static/images/Photos/Family/Sheppard/JF (3 of 10).jpg',
+      title: 'Sheppard Family 3'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (4 of 9).jpg',
-      title: 'Mariela Family 4'
+      img: '/static/images/Photos/Family/Sheppard/JF (4 of 10).jpg',
+      title: 'Sheppard Family 4'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (5 of 9).jpg',
-      title: 'Mariela Family 5'
+      img: '/static/images/Photos/Family/Sheppard/JF (5 of 10).jpg',
+      title: 'Sheppard Family 5'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (6 of 9).jpg',
-      title: 'Mariela Family 6'
+      img: '/static/images/Photos/Family/Sheppard/JF (6 of 10).jpg',
+      title: 'Sheppard Family 6'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (7 of 9).jpg',
-      title: 'Mariela Family 7'
+      img: '/static/images/Photos/Family/Sheppard/JF (7 of 10).jpg',
+      title: 'Sheppard Family 7'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (8 of 9).jpg',
-      title: 'Mariela Family 8'
+      img: '/static/images/Photos/Family/Sheppard/JF (8 of 10).jpg',
+      title: 'Sheppard Family 8'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (9 of 9).jpg',
-      title: 'Mariela Family 9'
+      img: '/static/images/Photos/Family/Sheppard/JF (9 of 10).jpg',
+      title: 'Sheppard Family 9'
+    },
+    {
+      img: '/static/images/Photos/Family/Sheppard/JF (10 of 10).jpg',
+      title: 'Sheppard Family 10'
     }
   ];
   

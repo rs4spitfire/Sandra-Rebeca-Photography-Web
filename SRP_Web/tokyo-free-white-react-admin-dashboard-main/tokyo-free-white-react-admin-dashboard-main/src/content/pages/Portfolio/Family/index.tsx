@@ -4,130 +4,36 @@ import {ThemeProvider, useTheme} from '@mui/material/styles';
 
 function FamilyPage(){
     const theme = useTheme();
-    return(<>    
-    <SelectFamily />
-    </>    
+    return(
+        <div>
+        <SelectFamily itemData={galleryData} />
+      </div>  
     );
 }
 
 
 export default FamilyPage;
 
-const FamilyImages = [
+const galleryData = [
     {
-        img: '/static/images/Photos/Family/1.jpg',
-        title: ''
-
+      img: '/static/images/Photos/Family/Mariela/JF (1 of 9).jpg',
+      title: 'Mariela Family',
+      credit: 'Sandra Rebeca Photography'
     },
     {
-        img: '/static/images/Photos/Family/2.jpg',
-        title: ''
-
+        img: '/static/images/Photos/Family/Schofield/JF (8 of 9).JPG',
+        title: 'Schofield Family',
+        credit: 'Sandra Rebeca Photography'
     },
     {
-        img: '/static/images/Photos/Family/3.jpg',
-        title: ''
-
+      img:'/static/images/Photos/Family/Payne/JF (2 of 11).JPG',
+      title: 'Payne Family',
+      credit: 'Sandra Rebeca Photography'
     },
     {
-        img: '/static/images/Photos/Family/4.jpg',
-        title: ''
-
-    },
-    
-    {
-        img: '/static/images/Photos/Family/5.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/6.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/7.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/8.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/9.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/10.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/11.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/12.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/13.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/14.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/15.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/16.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/17.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/18.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/19.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/20.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/21.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/22.jpg',
-        title: ''
-
-    },
-    {
-        img: '/static/images/Photos/Family/23.jpg',
-        title: ''
-
+      img:'/static/images/Photos/Family/Sheppard/JF (1 of 10).JPG',
+      title: 'Sheppard Family',
+      credit: 'Sandra Rebeca Photography'
     }
-];
+    
+  ];

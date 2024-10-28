@@ -9,40 +9,48 @@ const BlurryDialog = styled(Dialog)<DialogProps>(({ theme }) => ({
   
 const itemData = [
     {
-      img: '/static/images/Photos/Family/Mariela/JF (1 of 9).jpg',
-      title: 'Mariela Family 1'
+      img: '/static/images/Photos/Family/Payne/JF (1 of 11).jpg',
+      title: 'Payne Family 1'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (2 of 9).jpg',
-      title: 'Mariela Family 2'
+      img: '/static/images/Photos/Family/Payne/JF (2 of 11).jpg',
+      title: 'Payne Family 2'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (3 of 9).jpg',
-      title: 'Mariela Family 3'
+      img: '/static/images/Photos/Family/Payne/JF (3 of 11).jpg',
+      title: 'Payne Family 3'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (4 of 9).jpg',
-      title: 'Mariela Family 4'
+      img: '/static/images/Photos/Family/Payne/JF (4 of 11).jpg',
+      title: 'Payne Family 4'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (5 of 9).jpg',
-      title: 'Mariela Family 5'
+      img: '/static/images/Photos/Family/Payne/JF (5 of 11).jpg',
+      title: 'Payne Family 5'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (6 of 9).jpg',
-      title: 'Mariela Family 6'
+      img: '/static/images/Photos/Family/Payne/JF (6 of 11).jpg',
+      title: 'Payne Family 6'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (7 of 9).jpg',
-      title: 'Mariela Family 7'
+      img: '/static/images/Photos/Family/Payne/JF (7 of 11).jpg',
+      title: 'Payne Family 7'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (8 of 9).jpg',
-      title: 'Mariela Family 8'
+      img: '/static/images/Photos/Family/Payne/JF (8 of 11).jpg',
+      title: 'Payne Family 8'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (9 of 9).jpg',
-      title: 'Mariela Family 9'
+      img: '/static/images/Photos/Family/Payne/JF (9 of 11).jpg',
+      title: 'Payne Family 9'
+    },
+    {
+      img: '/static/images/Photos/Family/Payne/JF (10 of 11).jpg',
+      title: 'Payne Family 9'
+    },
+    {
+      img: '/static/images/Photos/Family/Payne/JF (11 of 11).jpg',
+      title: 'Payne Family 9'
     }
   ];
   

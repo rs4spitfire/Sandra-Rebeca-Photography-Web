@@ -9,40 +9,44 @@ const BlurryDialog = styled(Dialog)<DialogProps>(({ theme }) => ({
   
 const itemData = [
     {
-      img: '/static/images/Photos/Family/Mariela/JF (1 of 9).jpg',
-      title: 'Mariela Family 1'
+      img: '/static/images/Photos/Senior/Amber/JF (1 of 11).jpg',
+      title: 'Amber Senior 1'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (2 of 9).jpg',
-      title: 'Mariela Family 2'
+      img: '/static/images/Photos/Senior/Amber/JF (2 of 11).jpg',
+      title: 'Amber Senior 2'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (3 of 9).jpg',
-      title: 'Mariela Family 3'
+      img: '/static/images/Photos/Senior/Amber/JF (3 of 11).jpg',
+      title: 'Amber Senior 3'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (4 of 9).jpg',
-      title: 'Mariela Family 4'
+      img: '/static/images/Photos/Senior/Amber/JF (4 of 11).jpg',
+      title: 'Amber Senior 4'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (5 of 9).jpg',
-      title: 'Mariela Family 5'
+      img: '/static/images/Photos/Senior/Amber/JF (5 of 11).jpg',
+      title: 'Amber Senior 5'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (6 of 9).jpg',
-      title: 'Mariela Family 6'
+      img: '/static/images/Photos/Senior/Amber/JF (6 of 11).jpg',
+      title: 'Amber Senior 6'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (7 of 9).jpg',
-      title: 'Mariela Family 7'
+      img: '/static/images/Photos/Senior/Amber/JF (7 of 11).jpg',
+      title: 'Amber Senior 7'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (8 of 9).jpg',
-      title: 'Mariela Family 8'
+      img: '/static/images/Photos/Senior/Amber/JF (8 of 11).jpg',
+      title: 'Amber Senior 8'
     },
     {
-      img: '/static/images/Photos/Family/Mariela/JF (9 of 9).jpg',
-      title: 'Mariela Family 9'
+      img: '/static/images/Photos/Senior/Amber/JF (9 of 11).jpg',
+      title: 'Amber Senior 9'
+    },
+    {
+      img: '/static/images/Photos/Senior/Amber/JF (10 of 11).jpg',
+      title: 'Amber Senior 11'
     }
   ];
   

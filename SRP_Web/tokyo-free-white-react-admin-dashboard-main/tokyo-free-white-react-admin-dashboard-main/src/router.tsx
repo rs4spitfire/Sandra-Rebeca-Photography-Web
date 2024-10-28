@@ -27,13 +27,20 @@ const BusinessPage = Loader(lazy(()=>import('src/content/pages/Business')))
 //Portfolio Pages
 const EventPage = Loader(lazy(() => import('src/content/pages/Portfolio/Events')));
 const FamilyPage = Loader(lazy(() => import('src/content/pages/Portfolio/Family')));
+const SeniorPage = Loader(lazy(() => import('src/content/pages/Portfolio/Senior')));
 const NaturePage = Loader(lazy(()=> import('src/content/pages/Portfolio/Nature')));
 const PortraitPage = Loader(lazy(() => import('src/content/pages/Portfolio/Portrait')));
 const NewbornPage = Loader(lazy(() => import('src/content/pages/Portfolio/Newborn')));
-const RealEstatePage = Loader(lazy(() => import('src/content/pages/Portfolio/RealEstate')));
+//const RealEstatePage = Loader(lazy(() => import('src/content/pages/Portfolio/RealEstate')));
 
 //Family Galleries
 const MarielaFamily = Loader(lazy(()=> import('src/content/pages/Portfolio/Family/Mariela')))
+const SchofieldFamily = Loader(lazy(()=>import('src/content/pages/Portfolio/Family/Schofield')))
+const PayneFamily = Loader(lazy(()=>import('src/content/pages/Portfolio/Family/Payne')))
+const SheppardFamily = Loader(lazy(()=>import('src/content/pages/Portfolio/Family/Sheppard')))
+//Senior Galleries
+const AmberSenior = Loader(lazy(()=> import('src/content/pages/Portfolio/Senior/Amber')))
+const MichaelSenior = Loader(lazy(()=> import('src/content/pages/Portfolio/Senior/Michael')))
 //Gallery Pages
 const CarlasFamily = Loader(lazy(()=>import('src/content/pages/CarlasFamily')))
 // Dashboards
@@ -113,7 +120,7 @@ const routes: RouteObject[] = [
           },
           {
             path: 'AboutMe',
-            element:<StatusComingSoon />
+            element:<AboutMePage />
           },
           {
             path: 'ContactMe',
@@ -137,6 +144,10 @@ const routes: RouteObject[] = [
               element: <FamilyPage />
             },
             {
+              path:'SeniorPhotos',
+              element: <SeniorPage />
+            },
+            {
               path:'NATURE',
               element: <NaturePage />
             },
@@ -145,7 +156,7 @@ const routes: RouteObject[] = [
               element: <NewbornPage />
             },
             {
-              path:'PORTRAITS',
+              path:'ModelingPortraits',
               element: <PortraitPage />
             }        
           ]
@@ -156,6 +167,31 @@ const routes: RouteObject[] = [
           {
             path:'Mariela%20Family',
             element: <MarielaFamily />
+          },
+          {
+            path:'Schofield%20Family',
+            element:<SchofieldFamily/>
+          },
+          {
+            path:'Payne%20Family',
+            element:<PayneFamily/>
+          },
+          {
+            path:'Sheppard%20Family',
+            element:<SheppardFamily/>
+          }
+        ]
+      },
+      {
+        path:'/pages/Portfolio/SeniorPhotos',
+        children:[
+          {
+            path:'Amber',
+            element: <AmberSenior />
+          },
+          {
+            path:'Michael',
+            element: <MichaelSenior />
           }
         ]
       },
