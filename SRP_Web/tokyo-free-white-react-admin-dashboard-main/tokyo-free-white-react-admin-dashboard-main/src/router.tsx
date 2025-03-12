@@ -38,6 +38,7 @@ const MarielaFamily = Loader(lazy(()=> import('src/content/pages/Portfolio/Famil
 const SchofieldFamily = Loader(lazy(()=>import('src/content/pages/Portfolio/Family/Schofield')))
 const PayneFamily = Loader(lazy(()=>import('src/content/pages/Portfolio/Family/Payne')))
 const SheppardFamily = Loader(lazy(()=>import('src/content/pages/Portfolio/Family/Sheppard')))
+const NichollsFamily = Loader(lazy(()=>import('src/content/pages/Portfolio/Family/Nicholls')))
 //Senior Galleries
 const AmberSenior = Loader(lazy(()=> import('src/content/pages/Portfolio/Senior/Amber')))
 const MichaelSenior = Loader(lazy(()=> import('src/content/pages/Portfolio/Senior/Michael')))
@@ -183,6 +184,10 @@ const routes: RouteObject[] = [
           {
             path:'Sheppard%20Family',
             element:<SheppardFamily/>
+          },
+          {
+            path:'Nicholls%20Family',
+            element:<NichollsFamily/>
           }
         ]
       },

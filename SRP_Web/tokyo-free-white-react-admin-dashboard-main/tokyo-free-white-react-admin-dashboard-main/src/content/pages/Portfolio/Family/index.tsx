@@ -34,6 +34,11 @@ const galleryData = [
       img:'/static/images/Photos/Family/Sheppard/JF (1 of 10).JPG',
       title: 'Sheppard Family',
       credit: 'Sandra Rebeca Photography'
+    },
+    {
+      img:'/static/images/Photos/Family/Nicholls/JF (8 of 13).JPG',
+      title: 'Nicholls Family',
+      credit: 'Sandra Rebeca Photography'
     }
     
   ];

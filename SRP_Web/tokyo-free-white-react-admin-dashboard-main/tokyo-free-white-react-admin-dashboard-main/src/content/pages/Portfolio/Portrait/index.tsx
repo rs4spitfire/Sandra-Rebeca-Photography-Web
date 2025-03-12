@@ -16,11 +16,6 @@ const portraitImages = [
 
     },
     {
-        img: '/static/images/Photos/Portrait/Michael1.jpg',
-        title: 'Michael 1'
-
-    },
-    {
         img: '/static/images/Photos/Portrait/Mariela1.jpg',
         title: 'Mariela 1'
 
