@@ -44,20 +44,10 @@ const portraitImages = [
         img: '/static/images/Photos/Portrait/Paulina3.jpg',
         title: 'Paulina 3'
 
-    },
-    {
-        img: '/static/images/Photos/Portrait/Michael3.jpg',
-        title: 'Michael 3'
-
-    }, 
+    },    
     {
         img: '/static/images/Photos/Portrait/Mariela4.jpg',
         title: 'Mariela 4'
-
-    },
-    {
-        img: '/static/images/Photos/Portrait/Michael4.jpg',
-        title: 'Michael 4'
 
     },
     {

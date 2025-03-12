@@ -1,11 +1,12 @@
 import {
-  Typography, Badge, useTheme, Popover, Card, CardContent, Button, IconButton, Link, Box, Menu, MenuItem
+  Typography, useTheme, Popover, Card, CardContent, Button, IconButton, Link, Box, Menu, MenuItem
 } from '@mui/material';
 import { useRef, useState, useEffect } from 'react';
 import { ClickAwayListener } from '@mui/base';
 import { NavLink as RouterLink } from 'react-router-dom';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import MenuIcon from '@mui/icons-material/Menu';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 function getWindowDimensions() {
@@ -17,10 +18,11 @@ function HeaderTitle() {
   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
   const divRef = useRef();
   const [anchorEl, setAnchorEl] = useState(null);
-  const [dropdownAnchorEl, setDropdownAnchorEl] = useState(null);
+  const [portfolioAnchorEl, setPortfolioAnchorEl] = useState(null); // New anchor for portfolio submenu
   const open = Boolean(anchorEl);
-  const dropdownOpen = Boolean(dropdownAnchorEl);
+  const portfolioOpen = Boolean(portfolioAnchorEl);
   const id = open ? "simple-popover" : undefined;
+  const portfolioId = portfolioOpen ? "portfolio-popover" : undefined;
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -31,14 +33,11 @@ function HeaderTitle() {
 
   function closePopUp() {
     setAnchorEl(null);
+    setPortfolioAnchorEl(null);
   }
 
-  const handlePortfolioHover = (event) => {
-    setDropdownAnchorEl(event.currentTarget);
-  };
-
-  const handleDropdownClose = () => {
-    setDropdownAnchorEl(null);
+  const handlePortfolioClick = (event) => {
+    setPortfolioAnchorEl(portfolioAnchorEl ? null : event.currentTarget);
   };
 
   useEffect(() => {
@@ -61,7 +60,6 @@ function HeaderTitle() {
   const portfolioItems = [
     { label: "Family", path: "/pages/Portfolio/Family" },
     { label: "Newborn", path: "/pages/Portfolio/Newborn" },
-    { label: "Engagement", path: "/pages/Portfolio/Engagement" },
     { label: "Senior Photos", path: "/pages/Portfolio/SeniorPhotos" },
     { label: "Modeling Portraits", path: "/pages/Portfolio/ModelingPortraits" }
   ];
@@ -87,9 +85,10 @@ function HeaderTitle() {
                   disableRipple
                   component={RouterLink}
                   to={item.path}
-                  onMouseEnter={handlePortfolioHover}
-                  aria-controls={dropdownOpen ? 'portfolio-menu' : undefined}
+                  onMouseEnter={handlePortfolioClick}
+                  aria-controls={portfolioOpen ? 'portfolio-menu' : undefined}
                   aria-haspopup="true"
+                  endIcon={<ExpandMoreIcon />}
                 >
                   {item.label}
                 </Button>
@@ -108,38 +107,37 @@ function HeaderTitle() {
         )}
       </Box>
 
-      {/* Dropdown Menu */}
-      <Menu
-  id="portfolio-menu"
-  anchorEl={dropdownAnchorEl}
-  open={dropdownOpen}
-  onClose={handleDropdownClose}
-  onMouseLeave={handleDropdownClose}
-  MenuListProps={{ onMouseLeave: handleDropdownClose }}
-  PaperProps={{
-    style: {
-      boxShadow: 'none',
-      position: 'absolute', // Position absolutely to avoid affecting layout
-      top: '100%', // Position below the button
-      left: 0, // Align with the left edge of the button
-      zIndex: theme.zIndex.modal, // Ensure it appears above other content
-    },
-  }}
-  sx={{
-    mt: 1, // Margin top to adjust spacing from the button
-    width: '200px', // Specify a fixed width for the dropdown menu
-  }}
->
-  {portfolioItems.map((item) => (
-    <MenuItem
-      key={item.label}
-      component={RouterLink}
-      to={item.path}
-    >
-      {item.label}
-    </MenuItem>
-  ))}
-</Menu>
+      {/* Portfolio Dropdown (Mobile) */}
+      <Popover
+        id={portfolioId}
+        open={portfolioOpen}
+        anchorEl={portfolioAnchorEl}
+        onClose={() => setPortfolioAnchorEl(null)}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        PaperProps={{
+          style: {
+            boxShadow: theme.shadows[3],
+            backgroundColor: 'white',
+          },
+        }}
+      >
+        <ClickAwayListener onClickAway={() => setPortfolioAnchorEl(null)}>
+          <Card variant="outlined">
+            <CardContent>
+              {portfolioItems.map((item) => (
+                <MenuItem
+                  key={item.label}
+                  component={RouterLink}
+                  to={item.path}
+                  onClick={closePopUp}
+                >
+                  {item.label}
+                </MenuItem>
+              ))}
+            </CardContent>
+          </Card>
+        </ClickAwayListener>
+      </Popover>
 
       {/* Popover for Mobile Menu */}
       <Popover
@@ -150,15 +148,9 @@ function HeaderTitle() {
         onClose={closePopUp}
         PaperProps={{
           style: {
-            boxShadow: 'none', // Remove any shadow
-            backgroundColor: 'white', // Solid background color
-            backdropFilter: 'none', // Remove any blur effect
-            WebkitBackdropFilter: 'none', // Ensure compatibility with Webkit browsers
+            boxShadow: theme.shadows[3],
+            backgroundColor: 'white',
           },
-        }}
-        sx={{
-          backdropFilter: 'none !important', // Ensure the entire backdrop has no blur
-          WebkitBackdropFilter: 'none !important', // Ensure compatibility with Webkit browsers
         }}
       >
         <ClickAwayListener onClickAway={closePopUp}>
@@ -166,9 +158,15 @@ function HeaderTitle() {
             <CardContent>
               {navItems.map((item) => (
                 <div key={item.label}>
-                  <Button disableRipple onClick={closePopUp} component={RouterLink} to={item.path}>
-                    {item.label}
-                  </Button>
+                  {item.label === "Portfolio" ? (
+                    <Button disableRipple onClick={handlePortfolioClick} endIcon={<ExpandMoreIcon />}>
+                      {item.label}
+                    </Button>
+                  ) : (
+                    <Button disableRipple onClick={closePopUp} component={RouterLink} to={item.path}>
+                      {item.label}
+                    </Button>
+                  )}
                 </div>
               ))}
             </CardContent>
@@ -179,7 +177,7 @@ function HeaderTitle() {
       {isMobile && (
         <IconButton
           ref={divRef}
-          aria-label="more"
+          aria-label="menu"
           aria-controls={open ? 'long-menu' : undefined}
           aria-expanded={open ? 'true' : undefined}
           aria-haspopup="true"
